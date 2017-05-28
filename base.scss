@@ -1,0 +1,27 @@
+@import "./animations";
+
+%cicrle{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.circles{
+    @extend %cicrle;
+    top: 0;
+    left: 0;
+
+    li{
+        @extend %circle;
+        display: block;
+        border: 1px solid #fff;
+        border-radius: 100%;
+        @include animation(dripping 4s ease-in-out infinite);
+    }
+
+    @for $i from 1 through 6 {
+        li:nth-child(#{$i}){
+            animation-delay: $i * -670ms;
+        }
+    }
+}

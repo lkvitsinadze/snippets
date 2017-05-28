@@ -1,0 +1,112 @@
+@import "./helpers/mixins";
+
+@include keyframes( 'fadeUp' ) {
+    0% {
+        opacity: 0;
+        @include transform(translate3d(0,100%,0));
+    }
+
+    100% {
+        opacity: 1;
+        @include transform(none);
+    }
+}
+
+@include keyframes( 'fade' ) {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+
+@include keyframes('drawBackLine') {
+    0% {
+        @include transform(scale(1,0));
+    }
+    100% {
+        @include transform(scale(1,1));
+    }
+} 
+
+@include keyframes('lightUp') {
+    0%{
+        z-index: 0;
+        z-index: 500;
+    }
+    20%{
+        opacity: 1
+    }
+    80% {
+        opacity: 1;
+        z-index: 500;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@include keyframes('drawLines') {
+    100%{
+        stroke-dashoffset: 0;
+    }
+}
+
+@include keyframes("lensCircle") {
+    0% {
+        @include transform(rotate3d(0,0,1,0deg));
+    }
+    100% {
+        @include transform(rotate3d(0,0,1,360deg));
+    }
+}
+
+@include keyframes("lensCircleReverse") {
+    0% {
+        @include transform(rotate3d(0,0,1,0deg));
+    }
+    100% {
+        @include transform(rotate3d(0,0,1,-360deg));
+    }
+}
+
+@include keyframes("nextBtnCircle") {
+    0% {
+        stroke-dashoffset: -180;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@include keyframes("scaleY") {
+    0% {
+        @include transform(scale3d(1,0,1));
+    }
+    100% {
+        @include transform(scale3d(1,1,1));
+    }
+}
+
+@include keyframes("scaleX") {
+    0% {
+        @include transform(scale3d(0,1,1));
+    }
+    100% {
+        @include transform(scale3d(1,1,1));
+    }
+}
+
+@include keyframes("dripping"){
+    0%{
+        opacity: 1; 
+        @include transform(scale(1));
+    }
+    100%{
+        opacity: 0;
+        @include transform(scale(1.8));
+    }
+}
